@@ -1,0 +1,77 @@
+[project]
+name = "huggingface-collection"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "accelerate>=1.12.0",
+    "datasets>=4.4.2",
+    "matplotlib>=3.10.7",
+    "opencv-python>=4.11.0.86",
+    "pydantic-settings>=2.10.1",
+    "torch==2.6.0",
+    "torchvision==0.21.0",
+    "trackio>=0.13.1",
+    "transformers>=4.57.1",
+    "trl>=0.26.2",
+]
+
+
+[tool.ruff]
+lint.select = [
+    "B",
+    "E",
+    "F",
+    "I",
+    "UP",
+    "W",
+    "C4",
+    "SIM",
+    "ARG",
+    "PIE",
+    "T20",
+    "Q",
+    "N",
+]
+lint.ignore = ["B905", "B008", "B904", "F811", "E501"]
+lint.fixable = ["B", "F", "I", "UP"]
+lint.unfixable = []
+extend-include = ["*.ipynb"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+addopts = ["--import-mode=importlib"]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_date_format = "%Y-%m-%dT%H:%M:%S%z"
+log_cli_format = "%(levelname)-8s %(asctime)s %(name)s:%(funcName)s:L%(lineno)d %(message)s"
+
+# [tool.rye.scripts]
+# "prod" = { cmd = "python src/main.py" }
+# "dev" = { cmd = "python src/main.py", env = { "PYTHONDEVMODE" = "1" } }
+# "test" = { cmd = "pytest --durations=5", env = { "PYTHONDEVMODE" = "1" } }
+# "test:cov" = { cmd = "pytest --cov" }
+# "type" = { cmd = "mypy" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
