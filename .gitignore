@@ -209,3 +209,5 @@ __marimo__/
 # Ignore everything
 unsloth/unsloth_compiled_cache
 trained_models/
+SmolLM3-Custom-SFT/
+local_dpo_test/
