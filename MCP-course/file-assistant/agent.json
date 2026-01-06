@@ -1,0 +1,14 @@
+{
+    "model": "user.jan-nano",
+    "endpointUrl": "http://localhost:8000/api/",
+    "servers": [
+        {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@wonderwhy-er/desktop-commander"
+            ]
+        }
+    ]
+}

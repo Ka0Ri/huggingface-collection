@@ -1,0 +1,13 @@
+{
+    "model": "Qwen/Qwen2.5-72B-Instruct",
+    "servers": [
+        {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "http://localhost:7861/gradio_api/mcp/sse"
+            ]
+        }
+    ]
+}
