@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "pr-agent": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/media/aiseed/AISeed/code/huggingface-collection/MCP-course/mcp-course/projects/unit3/build-mcp-server/solution",
+        "run",
+        "server.py"
+      ]
+    }
+  }
+}
