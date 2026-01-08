@@ -1,6 +1,6 @@
 {
     "model": "Qwen/Qwen2.5-72B-Instruct",
-    "provider": "qwen",
+    "provider": "nebulis",
     "servers": [
         {
             "type": "stdio",
